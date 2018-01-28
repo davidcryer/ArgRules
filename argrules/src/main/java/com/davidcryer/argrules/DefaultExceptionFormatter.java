@@ -13,11 +13,15 @@ public class DefaultExceptionFormatter implements ExceptionFormatter {
             return "";
         }
         final StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < messages.length; i++) {
-            if (i > 0) {
-                builder.append(delimiter);
+        boolean hasAddedMessage = false;
+        for (final String message : messages) {
+            if (message != null) {
+                if (hasAddedMessage) {
+                    builder.append(delimiter);
+                }
+                builder.append(message);
+                hasAddedMessage = true;
             }
-            builder.append(messages[i]);
         }
         return builder.toString();
     }
