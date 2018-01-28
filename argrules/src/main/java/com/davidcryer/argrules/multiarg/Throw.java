@@ -1,4 +1,4 @@
-package com.davidcryer.argrules;
+package com.davidcryer.argrules.multiarg;
 
 class Throw {
 

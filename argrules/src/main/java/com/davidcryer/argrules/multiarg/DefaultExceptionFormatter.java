@@ -1,4 +1,4 @@
-package com.davidcryer.argrules;
+package com.davidcryer.argrules.multiarg;
 
 public class DefaultExceptionFormatter implements ExceptionFormatter {
     private final String delimiter;
