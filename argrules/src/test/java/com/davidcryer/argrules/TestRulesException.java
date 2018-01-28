@@ -1,6 +1,6 @@
 package com.davidcryer.argrules;
 
-class TestRulesException extends Results.Exception {
+class TestRulesException extends BrokenRulesException {
     private final TestResults results;
 
     TestRulesException(TestResults results) {
