@@ -9,13 +9,9 @@ public class Rule {
         this.errorMessage = errorMessage;
     }
 
-    public void checkSatisfied(final CheckCallback callback) {
-        if (!isSatisfied) {
-            callback.notSatisfied(errorMessage);
+    public void checkSatisfied(final CheckFailedCallback<String> callback) {
+        if (isSatisfied) {
+            callback.checkFailed(errorMessage);
         }
-    }
-
-    public interface CheckCallback {
-        void notSatisfied(String error);
     }
 }

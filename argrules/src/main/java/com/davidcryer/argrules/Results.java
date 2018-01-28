@@ -1,24 +1,18 @@
 package com.davidcryer.argrules;
 
-public abstract class ArgRules<E extends ArgRules.Exception> {
+public abstract class Results<E extends Results.Exception> {
 
-    public void enforce() throws E {
-        throwExceptionIfIllegal();
-    }
-
-    private void throwExceptionIfIllegal() throws E {
-        if (hasFailedRule()) {
-            throwException();
+    void checkPassed(final CheckFailedCallback<E> failCallback) {
+        if (passed()) {
+            failCallback.checkFailed(exception());
         }
     }
 
-    protected abstract boolean hasFailedRule();
-
-    private void throwException() throws E {
-        throw exception();
-    }
+    protected abstract boolean passed();
 
     protected abstract E exception();
+
+    protected abstract String[] toMessages();
 
     public static abstract class Exception extends RuntimeException {
 
