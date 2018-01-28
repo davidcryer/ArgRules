@@ -10,7 +10,7 @@ class TestResults extends Results<BrokenTestRulesException> {
     }
 
     @Override
-    protected Result[] results() {
+    protected Result[] asArray() {
         return new Result[] {firstResult, secondResult};
     }
 

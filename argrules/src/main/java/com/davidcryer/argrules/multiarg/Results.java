@@ -18,10 +18,10 @@ public abstract class Results<E extends BrokenRulesException> {
     }
 
     private Stream<Result> resultStream() {
-        return Arrays.stream(results());
+        return Arrays.stream(asArray());
     }
 
-    protected abstract Result[] results();
+    protected abstract Result[] asArray();
 
     protected abstract E exception();
 
