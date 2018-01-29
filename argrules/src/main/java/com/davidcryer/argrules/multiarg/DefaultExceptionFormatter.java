@@ -3,7 +3,7 @@ package com.davidcryer.argrules.multiarg;
 public class DefaultExceptionFormatter implements ExceptionFormatter {
     private final String delimiter;
 
-    protected DefaultExceptionFormatter(String delimiter) {
+    public DefaultExceptionFormatter(String delimiter) {
         this.delimiter = delimiter;
     }
 

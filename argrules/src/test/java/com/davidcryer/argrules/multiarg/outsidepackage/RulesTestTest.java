@@ -1,4 +1,6 @@
-package com.davidcryer.argrules.multiarg;
+package com.davidcryer.argrules.multiarg.outsidepackage;
+
+import com.davidcryer.argrules.multiarg.RulesTest;
 
 import static com.davidcryer.argrules.multiarg.DelayedResult.delayed;
 import static com.davidcryer.argrules.multiarg.ImmediateResult.forCheck;

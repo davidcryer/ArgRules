@@ -2,8 +2,8 @@ package com.davidcryer.argrules.multiarg;
 
 public class BrokenRulesException extends RuntimeException {
 
-    protected BrokenRulesException(final String[] messages) {
-        super(concatenate(messages));
+    protected BrokenRulesException(final Results results) {
+        super(concatenate(results.toMessages()));
     }
 
     private static String concatenate(final String[] messages) {

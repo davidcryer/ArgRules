@@ -1,4 +1,6 @@
-package com.davidcryer.argrules.multiarg;
+package com.davidcryer.argrules.multiarg.outsidepackage;
+
+import com.davidcryer.argrules.multiarg.BrokenRulesException;
 
 class BrokenTestRulesException extends BrokenRulesException {
     private final TestResults results;

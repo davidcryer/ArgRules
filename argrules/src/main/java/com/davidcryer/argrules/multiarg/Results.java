@@ -25,12 +25,12 @@ public abstract class Results<E extends BrokenRulesException> {
 
     protected abstract E exception();
 
-    protected String[] toMessages() {
+    String[] toMessages() {
         final List<String> messages = resultStream().filter(result -> !result.passed()).map(Result::note).collect(Collectors.toList());
         return messages.toArray(new String[messages.size()]);
     }
 
-    public interface Builder<R extends Results>{
+    public interface Builder<R extends Results> {
         R results();
     }
 }
