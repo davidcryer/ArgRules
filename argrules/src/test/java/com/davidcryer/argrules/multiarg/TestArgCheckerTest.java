@@ -2,20 +2,20 @@ package com.davidcryer.argrules.multiarg;
 
 import org.junit.Test;
 
-public class TestRulesTest {
+public class TestArgCheckerTest {
 
     @Test
     public void validTest() {
-        RulesTestTest.fresh().first("what?").second("okay...").run();
+        TestArgChecker.fresh().first("what?").second("okay...").check();
     }
 
     @Test(expected = BrokenTestRulesException.class)
     public void invalidTest_nullFirst() throws BrokenTestRulesException {
-        RulesTestTest.fresh().first(null).second("not sure about this").run();
+        TestArgChecker.fresh().first(null).second("not sure about this").check();
     }
 
     @Test(expected = BrokenTestRulesException.class)
     public void invalidTest_nullSecond() throws BrokenTestRulesException {
-        RulesTestTest.fresh().first("Uh oh").second(null).run();
+        TestArgChecker.fresh().first("Uh oh").second(null).check();
     }
 }

@@ -1,8 +1,8 @@
 package com.davidcryer.argrules.multiarg;
 
-public abstract class RulesTest<E extends BrokenRulesException, R extends Results<E>> {
+public abstract class ArgChecker<E extends BrokenRulesException, R extends Results<E>> {
 
-    public void run() throws E {
+    public void check() throws E {
         results().ensurePassed(Throw::throwable);
     }
 
