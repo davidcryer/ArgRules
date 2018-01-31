@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public abstract class Results<E extends BrokenRulesException> {
+public abstract class Results<E extends ArgException> {
 
     void ensurePassed(final FailedCallback<E> failedCallback) {
         if (!passed()) {

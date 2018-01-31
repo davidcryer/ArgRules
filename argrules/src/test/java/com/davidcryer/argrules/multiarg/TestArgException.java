@@ -1,9 +1,9 @@
 package com.davidcryer.argrules.multiarg;
 
-class BrokenTestRulesException extends BrokenRulesException {
+class TestArgException extends ArgException {
     private final TestResults results;
 
-    BrokenTestRulesException(TestResults results) {
+    TestArgException(TestResults results) {
         super(results);
         this.results = results;
     }

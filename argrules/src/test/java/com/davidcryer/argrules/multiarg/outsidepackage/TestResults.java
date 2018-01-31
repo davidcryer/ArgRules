@@ -3,7 +3,7 @@ package com.davidcryer.argrules.multiarg.outsidepackage;
 import com.davidcryer.argrules.multiarg.Result;
 import com.davidcryer.argrules.multiarg.Results;
 
-class TestResults extends Results<BrokenTestRulesException> {
+class TestResults extends Results<TestArgException> {
     private final Result firstResult;
     private final Result secondResult;
 
@@ -18,8 +18,8 @@ class TestResults extends Results<BrokenTestRulesException> {
     }
 
     @Override
-    protected BrokenTestRulesException exception() {
-        return new BrokenTestRulesException(this);
+    protected TestArgException exception() {
+        return new TestArgException(this);
     }
 
     static class Builder implements Results.Builder<TestResults> {

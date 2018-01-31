@@ -9,13 +9,13 @@ public class ArgCheckerTest {
         TestArgChecker.fresh().first("what?").second("okay...").check();
     }
 
-    @Test(expected = BrokenTestRulesException.class)
-    public void invalidTest_nullFirst() throws BrokenTestRulesException {
+    @Test(expected = TestArgException.class)
+    public void invalidTest_nullFirst() throws TestArgException {
         TestArgChecker.fresh().first(null).second("not sure about this").check();
     }
 
-    @Test(expected = BrokenTestRulesException.class)
-    public void invalidTest_nullSecond() throws BrokenTestRulesException {
+    @Test(expected = TestArgException.class)
+    public void invalidTest_nullSecond() throws TestArgException {
         TestArgChecker.fresh().first("Uh oh").second(null).check();
     }
 }
