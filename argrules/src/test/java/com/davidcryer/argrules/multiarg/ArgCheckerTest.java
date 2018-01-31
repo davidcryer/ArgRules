@@ -2,7 +2,7 @@ package com.davidcryer.argrules.multiarg;
 
 import org.junit.Test;
 
-public class TestArgCheckerTest {
+public class ArgCheckerTest {
 
     @Test
     public void validTest() {
