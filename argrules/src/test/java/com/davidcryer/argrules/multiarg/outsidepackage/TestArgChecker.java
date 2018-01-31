@@ -1,14 +1,16 @@
 package com.davidcryer.argrules.multiarg.outsidepackage;
 
+import com.davidcryer.argrules.multiarg.ArgChecker;
+
 import static com.davidcryer.argrules.multiarg.DelayedResult.delayed;
 import static com.davidcryer.argrules.multiarg.ImmediateResult.forCheck;
 import static com.davidcryer.argrules.multiarg.ResultChain.chain;
 
-class TestArgChecker extends com.davidcryer.argrules.multiarg.ArgChecker<TestArgException, TestResults> {
+class TestArgChecker extends ArgChecker<TestArgResults, TestArgException> {
     private final static String ERROR_FIRST_NULL = "first cannot be null";
     private final static String ERROR_SECOND_NULL = "second cannot be null";
     private final static String ERROR_SECOND_EMPTY = "second cannot be null";
-    private final TestResults.Builder resultsBuilder = new TestResults.Builder();
+    private final TestArgResults.Builder resultsBuilder = new TestArgResults.Builder();
 
     private TestArgChecker() {}
 
@@ -31,7 +33,12 @@ class TestArgChecker extends com.davidcryer.argrules.multiarg.ArgChecker<TestArg
     }
 
     @Override
-    protected TestResults results() {
+    protected TestArgResults results() {
         return resultsBuilder.results();
+    }
+
+    @Override
+    protected TestArgException exception(TestArgResults results) {
+        return new TestArgException(results);
     }
 }

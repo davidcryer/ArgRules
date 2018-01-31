@@ -1,9 +1,9 @@
 package com.davidcryer.argrules.multiarg;
 
 class TestArgException extends ArgException {
-    private final TestResults results;
+    private final TestArgResults results;
 
-    TestArgException(TestResults results) {
+    TestArgException(TestArgResults results) {
         super(results);
         this.results = results;
     }

@@ -2,7 +2,7 @@ package com.davidcryer.argrules.multiarg;
 
 public class ArgException extends RuntimeException {
 
-    protected ArgException(final Results results) {
+    protected ArgException(final ArgResults results) {
         super(concatenate(results.toMessages()));
     }
 

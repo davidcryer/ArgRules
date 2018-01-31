@@ -1,13 +1,10 @@
-package com.davidcryer.argrules.multiarg.outsidepackage;
+package com.davidcryer.argrules.multiarg;
 
-import com.davidcryer.argrules.multiarg.Result;
-import com.davidcryer.argrules.multiarg.Results;
-
-class TestResults extends Results<TestArgException> {
+class TestArgResults extends ArgResults {
     private final Result firstResult;
     private final Result secondResult;
 
-    private TestResults(Result firstResult, Result secondResult) {
+    private TestArgResults(Result firstResult, Result secondResult) {
         this.firstResult = firstResult;
         this.secondResult = secondResult;
     }
@@ -17,12 +14,7 @@ class TestResults extends Results<TestArgException> {
         return new Result[] {firstResult, secondResult};
     }
 
-    @Override
-    protected TestArgException exception() {
-        return new TestArgException(this);
-    }
-
-    static class Builder implements Results.Builder<TestResults> {
+    static class Builder implements ArgResults.Builder<TestArgResults> {
         private Result firstResult;
         private Result secondResult;
 
@@ -37,8 +29,8 @@ class TestResults extends Results<TestArgException> {
         }
 
         @Override
-        public TestResults results() {
-            return new TestResults(firstResult, secondResult);
+        public TestArgResults results() {
+            return new TestArgResults(firstResult, secondResult);
         }
     }
 }

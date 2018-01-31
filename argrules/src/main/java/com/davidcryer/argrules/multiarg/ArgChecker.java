@@ -1,10 +1,15 @@
 package com.davidcryer.argrules.multiarg;
 
-public abstract class ArgChecker<E extends ArgException, R extends Results<E>> {
+public abstract class ArgChecker<R extends ArgResults, E extends ArgException> {
 
     public void check() throws E {
-        results().ensurePassed(Throw::throwable);
+        final R results = results();
+        if (!results.passed()) {
+            Throw.throwable(exception(results));
+        }
     }
 
     protected abstract R results();
+
+    protected abstract E exception(R results);
 }
