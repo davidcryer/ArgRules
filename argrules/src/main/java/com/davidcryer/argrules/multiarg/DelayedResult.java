@@ -17,7 +17,7 @@ public class DelayedResult implements Result {
     }
 
     public static DelayedResult delayed(final Check check, final String errorNote, final String successNote) {
-        return new DelayedResult(check, successNote, errorNote);
+        return new DelayedResult(check, errorNote, successNote);
     }
 
     @Override
